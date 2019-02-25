@@ -3,6 +3,7 @@ if [ "$1" == "--help" ]; then
 	echo "drop [-m]"
 	echo " drop (copy) the files dragged"
 	echo " -m: move instead"
+	exit
 else
 	if [ ! -f /tmp/drag ]; then
 		echo "nothing dragged, nothing to do"
