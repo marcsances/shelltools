@@ -2,6 +2,10 @@
 
 This folder will contain some shell tools / scripts that I find useful to work with terminals.
 
+## Installation
+
+Copy the scripts to your PATH, for example copy all to /usr/local/bin. Make sure the files are executable.
+
 ## The tools
 
 ### drag / drop
