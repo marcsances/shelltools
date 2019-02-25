@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$1" == "--help" ]; then
+	"drag [files]"
+	"drags one or more files or folders" 
+fi
+echo $(find  $@ -maxdepth 0 | xargs readlink -f) > /tmp/drag

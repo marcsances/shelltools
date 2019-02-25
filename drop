@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ "$1" == "--help" ]; then
+	echo "drop [-m]"
+	echo " drop (copy) the files dragged"
+	echo " -m: move instead"
+else
+	if [ ! -f /tmp/drag ]; then
+		echo "nothing dragged, nothing to do"
+		exit 1
+	fi
+	cp -r $(cat /tmp/drag) .
+	if [ "$1" == "-m" ]; then
+		rm -r $(cat /tmp/drag) .
+	fi
+fi
+rm -f /tmp/drag
