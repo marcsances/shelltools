@@ -4,4 +4,8 @@ if [ "$1" == "--help" ]; then
 	"drags one or more files or folders" 
 	exit
 fi
-echo $(find  $@ -maxdepth 0 | xargs readlink -f) > /tmp/drag
+RLNK="readlink -f"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	RLNK="goodreadlink"
+fi
+echo $(find  $@ -maxdepth 0 | xargs $RLNK) > /tmp/drag

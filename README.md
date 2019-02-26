@@ -23,3 +23,9 @@ file1 file2 file3 folder1
 ```
 
 Use ``drop -m`` to move instead of copying the files. That's all it can do!
+
+### goodreadlink
+
+Copied from https://stackoverflow.com/questions/1055671/how-can-i-get-the-behavior-of-gnus-readlink-f-on-a-mac to give a quick solution to the problem that readlink -f doesn't get cannonical names in macOS.
+
+No warranties whatsoever. It is required to make drag/drop commands work in macOS.
