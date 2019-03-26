@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "$1" == "-c" ]; then
+    rm ~/.notes
+    exit
+fi
+
+if [ ! -f ~/.notes ]; then
+    echo "Nothing here!"
+else
+    nl ~/.notes
+fi

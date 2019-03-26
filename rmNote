@@ -1,0 +1,5 @@
+#!/bin/bash
+if [[ $# -ne 1 ]]; then
+    echo "missing line number"
+fi
+sed -i -e "$1d" ~/.notes

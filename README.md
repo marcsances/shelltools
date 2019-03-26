@@ -29,3 +29,30 @@ Use ``drop -m`` to move instead of copying the files. That's all it can do!
 Copied from https://stackoverflow.com/questions/1055671/how-can-i-get-the-behavior-of-gnus-readlink-f-on-a-mac to give a quick solution to the problem that readlink -f doesn't get cannonical names in macOS.
 
 No warranties whatsoever. It is required to make drag/drop commands work in macOS.
+
+### notes
+
+It allows you to make quick notes from the terminal, inspired by the game Hacknet.
+
+It has three commands: addNote, rmNote and notes. Notes are stored at ~/.notes.
+
+```bash
+# add notes
+$ ./addNote Hello
+$ ./addNote Some test
+$ ./addNote Goodbye
+# display notes
+$ ./notes
+     1	2019-03-26 11:38:52: Hello
+     2	2019-03-26 11:38:56: Some test
+     3	2019-03-26 11:38:59: Goodbye
+# remove a certain note
+$ ./rmNote 2
+$ ./notes
+     1	2019-03-26 11:38:52: Hello
+     2	2019-03-26 11:38:59: Goodbye
+# remove all notes
+$ ./notes -c
+$ ./notes
+Nothing here!
+```
