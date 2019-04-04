@@ -56,3 +56,11 @@ $ ./notes -c
 $ ./notes
 Nothing here!
 ```
+
+### git-branchnote
+
+If you are a dev who has to keep track of several Git branches simultaneously as me, you will find out the _notes_ command useful. You can `addNote myBranch: does whatever my branch shoudl do`, so if you have to checkout back to such branch, you know something else than the name. If your branch names are not very descriptive because of project requirements (us2811, v2.3.4), keeping notes will help you out.
+
+git-branchnote is just a small script that automatically creates a branch with checkout with the first parameter as name, and adds a note with the arguments as addNote would.
+
+The usage, therefore, is: `git branchnote myNewBranch does things that a new branch should`. As simple as it looks. 
