@@ -74,7 +74,7 @@ In a similar fashion than drag/drop, here/there allows you to export the current
 me@pc X $ here
 # from terminal B in directory Y
 me@pc Y $ there
-/home/me/Y
+/home/me/X
 me@pc Y $ cd $(there)
 me@pc X $
 ```
