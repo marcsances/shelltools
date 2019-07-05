@@ -64,3 +64,17 @@ If you are a dev who has to keep track of several Git branches simultaneously as
 git-branchnote is just a small script that automatically creates a branch with checkout with the first parameter as name, and adds a note with the arguments as addNote would.
 
 The usage, therefore, is: `git branchnote myNewBranch does things that a new branch should`. As simple as it looks. 
+
+### here/there
+
+In a similar fashion than drag/drop, here/there allows you to export the current directory and change to it from another terminal (or do some other stuff). However, due to the problem that commands are run in a subshell, "there" will only output the path, and you have to manually cd there:
+
+```bash
+# from terminal A in directory X
+me@pc X $ here
+# from terminal B in directory Y
+me@pc Y $ there
+/home/me/Y
+me@pc Y $ cd $(there)
+me@pc X $
+```
