@@ -78,3 +78,34 @@ me@pc Y $ there
 me@pc Y $ cd $(there)
 me@pc X $
 ```
+
+### bookmark
+
+Allows you to have bookmarks in the terminal, either directories or files, for later use.
+
+```bash
+# bookmark the current location
+me@pc directoryA $ bookmark -s
+# list bookmarks
+me@pc directoryZ $ bookmark
+    1 /home/test/directoryA
+# cd to bookmark
+me@pc directoryZ $ cd $(bookmark 1)
+me@pc directoryA $
+# remove a bookmark
+me@pc directoryZ $ bookmark -r 1
+me@pc directoryZ $ bookmark
+me@pc directoryZ $
+# add a file to bookmarks
+me@pc directoryX $ ls
+fileA
+me@pc directoryX $ bookmark fileA
+me@pc directoryX $ bookmark
+    1 /home/test/directoryX/fileA
+me@pc directoryZ $ cp $(bookmark 1) .
+me@pc directoryZ $ ls
+fileA
+# remove all bookmarks
+me@pc directoryZ $ bookmark -c
+```
+

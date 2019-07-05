@@ -1,0 +1,37 @@
+#!/bin/bash
+if [[ "$1" == "-s" ]]; then
+    shift
+    if [[ $# -ne 1 ]]; then
+        echo "$(pwd)" >> ~/.bookmarks 
+        exit
+    fi
+    shift
+    RLNK="readlink -f"
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        RLNK="goodreadlink"
+    fi
+    echo $(find $@ -maxdepth 0 | xargs $RLNK) >> ~/.bookmarks
+elif [[ "$1" == "-r" ]]; then
+    shift
+    if [[ $# -ne 1 ]]; then
+        echo "missing bookmark ID to remove"
+    fi
+    sed -i -e "${1}d" ~/.bookmarks
+elif [[ "$1" == "-c" ]]; then
+    rm ~/.bookmarks
+    touch ~/.bookmarks
+elif [[ "$1" == "--help" ]]; then
+    echo "usage (add bookmark): bookmark -s location"
+    echo "usage (save current directory as bookmark): bookmark -s"
+    echo "usage (remove bookmark): bookmark -r number"
+    echo "usage (print bookmark path): bookmark number"
+    echo "usage (list bookmarks): bookmark"
+    echo "usage (remove all bookmarks): boomark -c"
+    echo "example (go to bookmark folder): cd $(bookmark number)"
+    echo "example (copy bookmarked file here): cp $(bookmark number) ."
+elif [[ $# -eq 1 ]]; then
+    shift
+    sed -n "${1}p" ~/.bookmarks
+else
+    nl ~/.bookmarks
+fi
