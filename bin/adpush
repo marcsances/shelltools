@@ -1,0 +1,8 @@
+#!/bin/bash
+echo Pushing $@
+adb push -p $@ /data/local/tmp/apk.apk
+echo Installing APK...
+adb shell pm install /data/local/tmp/apk.apk
+echo Cleanup...
+adb shell rm /data/local/tmp/apk.apk
+echo Completed!

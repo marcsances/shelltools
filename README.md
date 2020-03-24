@@ -2,6 +2,10 @@
 
 This folder will contain some shell tools / scripts that I find useful to work with terminals.
 
+## What's new?
+
+* 24/03: new tool adpush
+
 ## Installation
 
 Copy the scripts to your PATH, for example copy all to /usr/local/bin. Make sure the files are executable.
@@ -109,3 +113,8 @@ fileA
 me@pc directoryZ $ bookmark -c
 ```
 
+## adpush
+
+``adb install`` is cool, but if your USB cable is slow, it may be interesting to know the upload progress of the app.
+
+``adpush`` works exactly as ``adb install``, but it shows the progress during the installation, nothing else.
