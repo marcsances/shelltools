@@ -4,6 +4,7 @@ This folder will contain some shell tools / scripts that I find useful to work w
 
 ## What's new?
 
+* 25/06: new tool leakout
 * 24/03: new tool adpush
 
 ## Installation
@@ -118,3 +119,15 @@ me@pc directoryZ $ bookmark -c
 ``adb install`` is cool, but if your USB cable is slow, it may be interesting to know the upload progress of the app.
 
 ``adpush`` works exactly as ``adb install``, but it shows the progress during the installation, nothing else.
+
+## leakout
+
+Ever had to deal with weird memory leaks that freeze your computer? Want to be safe when debugging them? Leakout monitors the available system RAM and kills the requested process if the free RAM is below a threshold (default 256000KB).
+
+Usage:
+
+``leakout python3``
+
+Would kill all python3 interpreters in case the memory is full.
+
+Use only in systems where physical memory is enough, since paging makes this system unreliable.

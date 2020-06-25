@@ -1,0 +1,10 @@
+#!/bin/bash
+while [ true ]; do
+	ARGS=$@
+	FREE=$(cat /proc/meminfo | grep MemFree | awk '{print $2}')
+	TRIGGER=256000
+	if [ $FREE -lt $TRIGGER ]; then
+	    killall -9 $@
+	fi
+	sleep 1
+done
